@@ -1,10 +1,10 @@
 ## Schedule
 
-Room IF 5.02, 15:00
+Room IF 5.02, 15:00-16:00
 
 | Date | Topic | Reading | Remark |
 |------|-------|---------|--------|
-| 15 Oct |  Introduction & planning |  |  |
+| 15 Oct |  Introduction & planning | Introduction in [Boxes and Diamonds](https://bd.openlogicproject.org/) | Optional reading   |
 | 22 Oct |  |  |  | 
 | 29 Oct |  |  |  |
 |  5 Nov |  |  |  |
