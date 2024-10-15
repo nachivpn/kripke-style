@@ -1,4 +1,4 @@
-| Topic | Reading | Remark |
+| Topic | Resource | Remark (*) |
 |-------|---------|--------|
 | Overview of the notion of 'possible worlds' | [Possible Worlds](https://plato.stanford.edu/entries/possible-worlds/), Stanford Encyclopedia of Philosophy | |
 |  Introduction to modal logic | Introduction, [Boxes and Diamonds (B&D)](https://bd.openlogicproject.org/) | |
@@ -15,4 +15,8 @@
 | "Two-dimensional Kripke Semantics I: Presheaves" | [Kavvos (2024)](https://arxiv.org/abs/2405.04157) | |
 | "A Formalised Proof of the Soundness and Completeness of a Simply Typed Lambda-Calculus with Explicit Substitutions" | [Coquand (2002)](https://link.springer.com/article/10.1023/A:1019964114625) | Application |
 | Overview of Lambda Definability | Chapters 3-5, [Ramcke (2019)](https://odr.chalmers.se/items/7a9e75ac-984a-4c3f-a0db-afb73afa759f) | Application |
-| "Fitch-Style Modal Lambda Calculi" |[Clouston (2018)](https://arxiv.org/abs/1710.08326)| Syntax, categorical semantics |
+| "Fitch-Style Modal Lambda Calculi" | [Clouston (2018)](https://arxiv.org/abs/1710.08326)| Syntax, categorical semantics |
+|"A Judgmental Reconstruction of Modal Logic" |[ Pfenning & Davies (2001)](https://www.cambridge.org/core/journals/mathematical-structures-in-computer-science/article/judgmental-reconstruction-of-modal-logic/975027BB7F07B59619913EAD4CEE52F4)| Syntax |
+| "Dual-Context Calculi for Modal Logic" |[Kavvos (2017)](https://arxiv.org/abs/1602.04860)| Syntax |
+
+(*) Remarks clarify the relevance of a reading topic when it is not obvious from the corresponding title or resource.
