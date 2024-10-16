@@ -1,12 +1,12 @@
 ### Overview
 
-| Topic | Resource | Remark (*) |
+| Topic | Resource | Remark |
 |-------|---------|--------|
 | Overview of the notion of 'possible worlds' | [Possible Worlds](https://plato.stanford.edu/entries/possible-worlds/), Stanford Encyclopedia of Philosophy | |
 
 ### Classical modal logics
 
-| Topic | Resource | Remark (*) |
+| Topic | Resource | Remark |
 |-------|---------|--------|
 | Introduction to (classical) modal logic | Introduction, [Boxes and Diamonds (B&D)](https://bd.openlogicproject.org/) | |
 | Semantics of classical modal logic | Chapter 1, B&D | |
@@ -15,9 +15,10 @@
 
 ### Intuitionistic logics
 
-| Topic | Resource | Remark (*) |
+| Topic | Resource | Remark |
 |-------|---------|--------|
 | Semantics of intuitionistic logic | Chapter 8, B&D | |
+| Embedding intuitionistic logic into S4 | [Chapter 9](https://www.cambridge.org/core/books/basic-proof-theory/modal-and-linear-logic/5457CE8C03CA54CF4E666CA8BEC2BB31), [Basic Proof Theory](https://www.cambridge.org/core/books/basic-proof-theory/928508F797214A017D245A1FB67CCCD9) | See §2, §9.6.3 |
 | "Semantical Analysis of Intuitionistic Logic I" |[Kripke (1965)](https://www.sciencedirect.com/science/article/pii/S0049237X08716859)| |
 | "Semantics for a Class of Intuitionistic Modal Calculi" | [Fischer Servi (1980)](https://link.springer.com/chapter/10.1007/978-94-009-8937-5_5)| |
 | "Models for normal intuitionistic modal logics" | [Božić & Došen (1984)](https://link.springer.com/article/10.1007/BF02429840) | |
@@ -31,7 +32,7 @@
 
 ### Typed-Lambda calculi
 
-| Topic | Resource | Remark (*) |
+| Topic | Resource | Remark |
 |-------|---------|--------|
 | "Kripke-style models for typed lambda calculus" | [Mitchell & Moggi (1991)](https://www.sciencedirect.com/science/article/pii/016800729190067V) | |
 | "Coming to terms with modal logic" | [Borghuis (1994)](https://research.tue.nl/en/publications/coming-to-terms-with-modal-logic-on-the-interpretation-of-modalit) | Syntax |
@@ -41,5 +42,3 @@
 | "Fitch-Style Modal Lambda Calculi" | [Clouston (2018)](https://arxiv.org/abs/1710.08326)| Syntax, categorical semantics |
 | Overview of 'Kripke predicates', Normalization and Lambda Definability | Chapters 3-5, [Ramcke (2019)](https://odr.chalmers.se/items/7a9e75ac-984a-4c3f-a0db-afb73afa759f) | Application |
 | "Two-dimensional Kripke Semantics I: Presheaves" | [Kavvos (2024)](https://arxiv.org/abs/2405.04157) | |
-
-(*) Remarks clarify the relevance of a reading topic when it is not obvious from the corresponding title or resource.
