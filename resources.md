@@ -2,7 +2,7 @@
 
 | Topic | Resource | Remark |
 |-------|---------|--------|
-| Overview of the notion of 'possible worlds' | [Possible Worlds](https://plato.stanford.edu/entries/possible-worlds/), Stanford Encyclopedia of Philosophy | |
+| Overview of "possible worlds" | [Possible Worlds](https://plato.stanford.edu/entries/possible-worlds/), Stanford Encyclopedia of Philosophy | |
 
 ### Classical modal logics
 
