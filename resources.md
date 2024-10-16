@@ -18,7 +18,7 @@
 | Topic | Resource | Remark |
 |-------|---------|--------|
 | Semantics of intuitionistic logic | Chapter 8, B&D | |
-| Embedding intuitionistic logic into S4 | [Chapter 9](https://www.cambridge.org/core/books/basic-proof-theory/modal-and-linear-logic/5457CE8C03CA54CF4E666CA8BEC2BB31), [Basic Proof Theory](https://www.cambridge.org/core/books/basic-proof-theory/928508F797214A017D245A1FB67CCCD9) | See §2, §9.6.3 |
+| Embedding intuitionistic logic into S4 | [Chapter 9](https://www.cambridge.org/core/books/basic-proof-theory/modal-and-linear-logic/5457CE8C03CA54CF4E666CA8BEC2BB31), [Basic Proof Theory](https://www.cambridge.org/core/books/basic-proof-theory/928508F797214A017D245A1FB67CCCD9) | See §9.2, §9.6.3 |
 | "Semantical Analysis of Intuitionistic Logic I" |[Kripke (1965)](https://www.sciencedirect.com/science/article/pii/S0049237X08716859)| |
 | "Semantics for a Class of Intuitionistic Modal Calculi" | [Fischer Servi (1980)](https://link.springer.com/chapter/10.1007/978-94-009-8937-5_5)| |
 | "Models for normal intuitionistic modal logics" | [Božić & Došen (1984)](https://link.springer.com/article/10.1007/BF02429840) | |
