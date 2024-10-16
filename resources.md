@@ -34,6 +34,7 @@
 | Topic | Resource | Remark (*) |
 |-------|---------|--------|
 | "Kripke-style models for typed lambda calculus" | [Mitchell & Moggi (1991)](https://www.sciencedirect.com/science/article/pii/016800729190067V) | |
+| "Coming to terms with modal logic" | [Borghuis (1994)](https://research.tue.nl/en/publications/coming-to-terms-with-modal-logic-on-the-interpretation-of-modalit) | Syntax |
 |"A Judgmental Reconstruction of Modal Logic" |[ Pfenning & Davies (2001)](https://www.cambridge.org/core/journals/mathematical-structures-in-computer-science/article/judgmental-reconstruction-of-modal-logic/975027BB7F07B59619913EAD4CEE52F4)| Syntax |
 | "A Formalised Proof of the Soundness and Completeness of a Simply Typed Lambda-Calculus with Explicit Substitutions" | [Coquand (2002)](https://link.springer.com/article/10.1023/A:1019964114625) | Application |
 | "Dual-Context Calculi for Modal Logic" |[Kavvos (2017)](https://arxiv.org/abs/1602.04860)| Syntax |
