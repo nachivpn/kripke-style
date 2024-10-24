@@ -3,6 +3,7 @@
 | Topic | Resource | Remark |
 |-------|---------|--------|
 | Overview of "possible worlds" | [Possible Worlds](https://plato.stanford.edu/entries/possible-worlds/), Stanford Encyclopedia of Philosophy | |
+| "Modal Logic for Open Minds" | [Van Benthem (2010)](http://cs112.org/wp-content/uploads/2013/09/VanBenthem-ModalLogic.pdf) | Book, Unofficial URL |
 
 ### Classical modal logics
 
