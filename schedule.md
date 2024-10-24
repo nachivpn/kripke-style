@@ -1,6 +1,8 @@
 ## Schedule
 
-Room IF 5.02, 15:00-16:00
+When: _15:00-16:00_ on Tuesdays
+
+Where: Room _IF 5.02_ (with the exception of 3 Dec, when it will be in _IF 3.07_)
 
 | Date | Topic | Reading | Led by |
 |------|-------|---------|--------|
