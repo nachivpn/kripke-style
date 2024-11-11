@@ -1,4 +1,4 @@
-## Schedule
+## Reading schedule
 
 When: _15:00-16:00_ on Tuesdays
 
@@ -15,4 +15,10 @@ Where: Room _IF 5.02_ (with the exception of 3 Dec, when it will be in _IF 3.07_
 | 26 Nov | Kripke-style models for typed lambda calculus | Mitchell & Moggi (1991) |  |
 |  3 Dec | Semantics of intuitionistic modal logic |  |  |
 | 10 Dec | Fitch-style modal lambda calculi | Clouston (2018) | Justus |
-| 17 Dec |  |  |  |
+| 17 Dec |  |  | |
+
+## Invited talks
+
+| Date | Title | Speaker | Remark |
+|------|-------|---------|--------|
+| 4 Feb | TBD | [Alex Kavvos](https://seis.bristol.ac.uk/~tz20861/) |  |
