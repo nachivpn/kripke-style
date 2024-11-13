@@ -13,9 +13,9 @@ Where: Room _IF 5.02_ (with the exception of 3 Dec, when it will be in _IF 3.07_
 | 12 Nov | Axiomatic Derivations | Chapter 3, B&D | Nachi |
 | 19 Nov | Semantics of intuitionistic logic | Chapter 8, B&D | Wenhao |
 | 26 Nov | Fitch-style modal lambda calculi | Clouston (2018) | Justus |
-|  3 Dec |  |  |  |
-| 10 Dec |  |  |  |
-| 17 Dec |  |  |  |
+|  3 Dec | Open discussion |  |  |
+| 10 Dec | Final presentation - I |  |  |
+| 17 Dec | Final presentation - II |  |  |
 
 ## Invited talks
 
