@@ -20,9 +20,9 @@ Where: Room _IF 5.02_ (with the exception of 3 Dec, when it will be in _IF 3.07_
 
 ## Final presentations
 
-| Topic | Presented by |
-|-------|--------|
-| Completeness for intuitionistic logic | Nachi |
+| Topic | Artifact | Presented by |
+|-------|--------|--------|
+| Completeness for intuitionistic logic | [ipl-completeness.md](presentations/ipl-completeness.md) | Nachi |
 | ... | ... |
 
 ## Invited talks
