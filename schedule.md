@@ -17,6 +17,14 @@ Where: Room _IF 5.02_ (with the exception of 3 Dec, when it will be in _IF 3.07_
 | 10 Dec | Final presentation - I |  |  |
 | 17 Dec | Final presentation - II |  |  |
 
+
+## Final presentations
+
+| Topic | Presented by |
+|-------|--------|
+| Completeness for intuitionistic logic | Nachi |
+| ... | ... |
+
 ## Invited talks
 
 | Date | Title | Speaker | Remark |
