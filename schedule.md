@@ -24,6 +24,7 @@ Where: Room _IF 5.02_ (with the exception of 3 Dec, when it will be in _IF 3.07_
 |-------|--------|--------|
 | Completeness for intuitionistic logic | [ipl-completeness.md](artifacts/ipl-completeness.md) | Nachi |
 | Second-order definability and expressiveness of modal types  | [expressiveness.md](artifacts/expressiveness.md) | Wenhao |
+| Modal Natural Deduction | [modal_natural_deduction.md](artifacts/modal_natural_deduction.md) | Orpheas |
 | ... | ... |
 
 ## Invited talks
