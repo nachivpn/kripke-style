@@ -14,8 +14,8 @@ Where: Room _IF 5.02_ (with the exception of 3 Dec, when it will be in _IF 3.07_
 | 19 Nov | Semantics of intuitionistic logic | Chapter 8, B&D | Wenhao |
 | 26 Nov | (Fitch-style) Modal lambda calculi | Clouston (2018) | Nachi |
 |  3 Dec | Open discussion |  |  |
-| 10 Dec | Final presentation - I |  |  |
-| 17 Dec | Final presentation - II |  |  |
+| 10 Dec | Final presentation - I |  |  Nachi |
+| 17 Dec | Final presentation - II |  |  Wenhao, Orpheas |
 
 
 ## Final presentations
@@ -31,4 +31,4 @@ Where: Room _IF 5.02_ (with the exception of 3 Dec, when it will be in _IF 3.07_
 
 | Date | Title | Speaker | Remark |
 |------|-------|---------|--------|
-| 4 Feb | TBD | [Alex Kavvos](https://seis.bristol.ac.uk/~tz20861/) |  |
+| 11 Feb | TBD (On Two-dimensional Kripke Semantics) | [Alex Kavvos](https://seis.bristol.ac.uk/~tz20861/) |  |
