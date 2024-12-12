@@ -1,0 +1,66 @@
+This is a short note containing proof of completeness of intuitionistic propositional logic (IPL) for its Kripke semantics.
+
+Fix some set 𝓥 of propositional variables. A *Kripke frame* is a preordered set (W,≤) and a *Kripke Model* is a frame plus a valuation
+: V : 𝓥 × W → {0,1}
+which is monotone in the W-argument.
+
+The interpretation of formulas is given by
+: ⟦p⟧(w) = V(p,w)
+: ⟦A ∧ B⟧(w) = ⟦A⟧(w) ∧ ⟦B⟧(w)
+: ⟦A → B⟧(w) = ∀w'. w ≤ w' ⇒ ⟦A⟧(w') ⇒ ⟦B⟧(w')
+: ⟦A ∨ B⟧(w) = ⟦A⟧(w) ∨ ⟦B⟧(w)
+: ⟦⊥⟧(w) = 0
+
+The {∧,→}-fragment of IPL is given by the following deduction system.
+
+: A ∈ Γ
+: --
+: Γ ⊢ A
+
+: Γ ⊢ A, Γ ⊢ B
+: ==
+: Γ ⊢ A ∧ B
+
+: Γ,A ⊢ B
+: --
+: Γ ⊢ A → B
+
+: Γ ⊢ A → B, Γ ⊢ A
+: --
+: Γ ⊢ B
+
+*Theorem*: {∧,→}-IPL is complete for its Kripke semantics.
+*Proof*: Construct a universal Kripke model as follows. A world is a deductively closed set of formulas (we don't need to worry about consistent in this fragment). The accessibility relation is just set inclusion. The valuation is
+: V(p,w) = [p ∈ w].
+
+*Lemma*: ⟦A⟧(w) = [A ∈ w].
+*Proof*: By induction on A, for all worlds w. The case A = p ∈ 𝓥 is obvious. For A ∧ B,
+: ⟦A ∧ B⟧(w) = ⟦A⟧(w) ∧ ⟦B⟧(w) = [A ∈ w] ∧ [B ∈ w] = [A ∧ B ∈ w].
+For A → B, suppose A → B ∈ w, and suppose w ≤ w' and ⟦A⟧(w'). Then A ∈ w' and A → B ∈ w ⊆ w', so B ∈ w', so ⟦B⟧(w'), as required. Conversely, suppose ⟦A → B⟧(w). Let w' be the deductive closure of w ∪ {A}. Then w ≤ w' and A ∈ w', so ⟦A⟧(w'), so ⟦B⟧(w'), so B ∈ w', so w,A ⊢ B. It follows that w ⊢ A → B, so A → B ∈ w. ∎Lemma
+
+Now, suppose A is a formula valid in all Kripke models. Writing T for the set of intuitionistic tautologies in the {∧,→}-fragment, we have ⟦A⟧(T). So by the lemma A ∈ T.
+∎Theorem
+
+*Remark*: We could have taken our worlds to just be contexts, and prove a lemma ⟦A⟧(Γ) = [Γ ⊢ A].
+
+*Theorem*: Full IPL is complete for its Kripke semantics.
+*Proof*: Construct a universal Kripke model as follows. A world is a set of formulas which is
+1. deductively closed,
+2. consistent,
+3. disjunctively closed: whenever A ∨ B ∈ w then either A ∈ w or B ∈ w.
+
+*Lemma*: Let S be a consistent set of formulas. Then there exists a world w containing S.
+*Proof*: By Zorn's Lemma we can extend S to a *maximal* consistent set T. By the usual arguments, T is deductively closed. It remains to show that T is disjunctively closed. Suppose A ∨ B ∈ T. Then, if A,B ∉ T, this means both T ∪ {A} and T ∪ {B} are inconsistent. I.e., ¬A,¬B ∈ T. But A ∨ B, ¬A, ¬B ⊢ ⊥, so ⊥ ∈ T, a contradiction. ∎Lemma
+
+We take the valuation to be
+: V(p,w) = [p ∈ w].
+
+*Lemma*: ⟦A⟧(w) = [A ∈ w].
+*Proof*: By induction on A, for all worlds w. The cases p ∈ 𝓥 and A ∧ B are exactly as before. For A → B, the case [A → B ∈ w] ≤ ⟦A → B⟧(w) is the same. For the converse, suppose ⟦A → B⟧(w). If w ∪ {A} is inconsistent, it means ¬A ∈ w, from we have A → B ∈ w. If w ∪ {A} is consistent, we can use the lemma to find a world w' containing it, and then complete the proof as before.
+
+The case ⊥ is trivial, since worlds are by definition consistent. Finally, we consider the case A ∨ B. But
+: ⟦A ∨ B⟧(w) = ⟦A⟧(w) ∨ ⟦B⟧(w) = [A ∈ w] ∨ [B ∈ w] = [A ∨ B ∈ w]
+by the disjunctive closure of w. ∎Lemma
+
+Now, suppose A is a formula valid in all Kripke models. Writing T for the set of intuitionistic tautologies, T is a world since intuitionistic logic has 'the disjunction property' and is consistent. So ⟦A⟧(T). So by the lemma, A ∈ T.
+∎Theorem
