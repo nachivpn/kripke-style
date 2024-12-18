@@ -1,6 +1,6 @@
 # Modal Natural Deduction
 
-A small overview on how natural deduction systems (of some flavour) can be used as proof systems for normal modal logics.
+A small overview on how natural deduction systems can be used as proof systems for normal modal logics.
 
 ## Motivation 
 
@@ -14,8 +14,8 @@ Recall the necessitation rule in axiomatic derivation systems such as in Hilbert
 In natural deduction systems such an inference rule is no longer sound since in the semantics necessitation only holds at the model level (in contrast to a particular world): 
 `M ⊩ A ⇒ M ⊩ □ A`
 
-In this (small) presentation I will explore some ways on how necessitation can be expressed in natural deduction systems.
-Details to be figured out... 
+In this (small) presentation I will explore some ways on how necessitation can be expressed in Fitch-style natural deduction systems.
+See [notes](artifacts/modal_natural_deduction_notes.pdf).
 
 ## References
 
