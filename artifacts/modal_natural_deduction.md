@@ -15,7 +15,7 @@ In natural deduction systems such an inference rule is no longer sound since in 
 `M ⊩ A ⇒ M ⊩ □ A`
 
 In this (small) presentation I will explore some ways on how necessitation can be expressed in Fitch-style natural deduction systems.
-See [notes](artifacts/modal_natural_deduction_notes.pdf).
+See [notes](modal_natural_deduction_notes.pdf).
 
 ## References
 
