@@ -1,4 +1,6 @@
-This is a short note containing proof of completeness of intuitionistic propositional logic (IPL) for its Kripke semantics.
+This is a note to work out in detail a few aspects Kripke semantics and completeness of intuitionistic propositional logic (IPL).
+
+* Kripke models
 
 Fix some set 𝓥 of propositional variables. A *Kripke frame* is a preordered set (W,≤) and a *Kripke Model* is a frame plus a valuation
 : V : 𝓥 × W → {0,1}
@@ -10,6 +12,8 @@ The interpretation of formulas is given by
 : ⟦A → B⟧(w) = ∀w'. w ≤ w' ⇒ ⟦A⟧(w') ⇒ ⟦B⟧(w')
 : ⟦A ∨ B⟧(w) = ⟦A⟧(w) ∨ ⟦B⟧(w)
 : ⟦⊥⟧(w) = 0
+
+* The {∧,→}-fragment of IPL and its Kripke semantics
 
 The {∧,→}-fragment of IPL is given by the following deduction system.
 
@@ -43,6 +47,8 @@ Now, suppose A is a formula valid in all Kripke models. Writing T for the set of
 
 *Remark*: We could have taken our worlds to just be contexts, and prove a lemma ⟦A⟧(Γ) = [Γ ⊢ A].
 
+* Full IPL and its Kripke semantics
+
 *Theorem*: Full IPL is complete for its Kripke semantics.
 *Proof*: Construct a universal Kripke model as follows. A world is a set of formulas which is
 1. deductively closed,
@@ -63,4 +69,217 @@ The case ⊥ is trivial, since worlds are by definition consistent. Finally, we 
 by the disjunctive closure of w. ∎Lemma
 
 Now, suppose A is a formula valid in all Kripke models. Writing T for the set of intuitionistic tautologies, T is a world since intuitionistic logic has 'the disjunction property' and is consistent. So ⟦A⟧(T). So by the lemma, A ∈ T.
+∎Theorem
+
+* Kripke-Joyal or 'sheaf' Kripke models: let's call them 'cover models'
+
+Let's translate the Grothendieck topology axioms to the setting of a Kripke frame. Afterwards we can compare them to Beth models. Because Grothendieck topologies are normally specified for presheaves, i.e. contravariant functors, there will be some dualization. Using the term 'cosheaf' here would clash with another meaning, so I'll just say 'sheaf', etc. Just note that, for the usual way of turning preorders into categories, these notions are dual to the usual ones.
+
+Let (W,≤) be a Kripke frame. A *coverage* assigns to each w ∈ W a set J(w) where
+: J(w) ⊆ P({ u ∈ W | w ≤ u })
+satisfying the following conditions
++ (C) :: if S ∈ J(w) and w ≤ w', then there exists S' ∈ J(w') with
+  : ∀ u ∈ S'. ∃ v ∈ S. v ≤ u.
++ (M) :: {w} ∈ J(w)
++ (L) :: if S ∈ J(w) and we have Sᵤ ∈ J(u) for each u ∈ S, then ⋃{u ∈ S} Sᵤ ∈ J(w).
+
+*Remark*: This formulation essentially comes from cite:johnstone-sketches-of-an-elephant-volume-1, except that Johnstone only requires (C) and treats other axioms as optional. This is because closing the coverage under conditions (M) and (L) does not change the notion of J-sheaf at all. We could omit (M) here without issues, but without (L) we would have a more complicated interpretation of disjunction and ⊥ below. To be more precise, if we only insisted on axiom (C), we would define the interpretations of the logical connectives in terms of the Heyting algebra of (subterminal) J-sheaves. In this Heyting algebra, ∧ and → still have the same formula as for Kripke models, but ⊥ and ∃ are defined only in terms of a universal property. Actually computing a formula for ∨ and ⊥ is difficult unless we have axiom (L).
+
+Let's say a *cover model* is a Kripke frame (W,≤) equipped with a coverage J and a valuation
+: V : 𝓥 × W → {0,1}
+which is monotone and a "J-sheaf" in its W-argument:
+: ∀ p ∈ 𝓥. ∀ w ∈ W. ∀ S ∈ J(w). (⋀{u ∈ S} V(p,u)) = V(p,w)
+(by monotonicity it suffices to prove ≤ to get =).
+
+ The interpretation of formulas is given by:
+: ⟦p⟧(w) = V(p,w)
+: ⟦A ∧ B⟧(w) = ⟦A⟧(w) ∧ ⟦B⟧(w)
+: ⟦⊤⟧(w) = 1 (a trivial case in all proofs)
+: ⟦A → B⟧(w) = ∀w'. w ≤ w' ⇒ ⟦A⟧(w') ⇒ ⟦B⟧(w')
+: ⟦A ∨ B⟧(w) = ∃ S ∈ J(w). ∀ u ∈ S. ⟦A⟧(u) ∨ ⟦B⟧(u)
+: ⟦⊥⟧(w) = ∃ S ∈ J(w). ∀ u ∈ S. ⊥
+The last clause is written to match the general pattern of disjunctions. More transparently it says
+: ⟦⊥⟧(w) = [∅ ∈ J(w)].
+
+*Remark*: An ordinary Kripke model can be seen as a cover model where ∀ w ∈ W. J(w) = {{w}}.
+
+*Lemma*: For each formula A, ⟦A⟧ is (monotone and) a J-sheaf.
+*Proof*: By induction on A. In the non-disjunctive cases the monotonicity is the same as for ordinary Kripke models and we omit it. The case for variables is trivial. For A ∧ B, if S ∈ J(w), then
+: {u ∈ S} ⟦A ∧ B⟧(u)
+: = ⋀{u ∈ S} ⟦A⟧(u) ∧ ⟦B⟧(u)
+: = (⋀{u ∈ S} ⟦A⟧(u)) ∧ (⋀{u ∈ S} ⟦B⟧(u))
+: = ⟦A⟧(w) ∧ ⟦B⟧(w).
+For A → B, if S ∈ J(w), we certainly have
+: ⟦A → B⟧(w) ≤ ⋀{u ∈ S} ⟦A → B⟧(u)
+by monotonicity. On the other hand, by axiom (C), for any w' ≥ w there exists S' ∈ J(w') such that
+: ∀ v ∈ S'. ∃ u ∈ S. u ≤ v.
+Hence
+: ⟦A⟧(w') → ⟦B⟧(w')
+: = ⟦A⟧(w') → ⋀{v ∈ S'} ⟦B⟧(v)
+: = ⋀{v ∈ S'} ⟦A⟧(w') → ⟦B⟧(v)
+: ≥ ⋀{v ∈ S'} ⟦A⟧(v) → ⟦B⟧(v)
+: ≥ ⋀{u ∈ S} ⋀{u ≤ v} ⟦A⟧(v) → ⟦B⟧(v)
+: = ⋀{u ∈ S} ⟦A → B⟧(u)
+which establishes the converse inequality. (As expected from the topos theory, we needed ⟦B⟧ to be a sheaf but only needed ⟦A⟧ to be monotone).
+
+Let's consider the case of ⊥. For monotonicity,
+: ⟦⊥⟧(w) = 1
+iff ∅ ∈ J(w), so if w ≤ w' we need to check that ∅ ∈ J(w) ⇒ ∅ ∈ J(w'). But this is a special case of axiom (C). For being a sheaf, for S ∈ J(w) we have
+: ⋀{u ∈ S} ⟦⊥⟧(u) = 1
+iff ∅ ∈ J(u) for all u ∈ S. We just need to check that this implies ∅ ∈ J(w). But this is a special case of axiom (L).
+
+Finally, we consider A ∨ B. First monotonicity. Suppose ⟦A ∨ B⟧(w) = 1 and w ≤ w'. Take S ∈ J(w) such that
+: ∀ u ∈ S. ⟦A⟧(u) ∨ ⟦B⟧(u) = 1.
+Then by (C) there exists S' ∈ J(w') such that
+: ∀ v ∈ S'. ∃ u ∈ S. u ≤ v.
+Then
+: ⟦A ∨ B⟧(w')
+: ≥ ⋀{v ∈ S'} ⟦A⟧(v) ∨ ⟦B⟧(v)
+: ≥ ⋀{u ∈ S} ⟦A⟧(u) ∨ ⟦B⟧(u) = 1
+so
+: ⟦A ∨ B⟧(w') = 1.
+For the sheaf condition, let S ∈ J(w). We certainly have
+: ⟦A ∨ B⟧(w) ≤ ⋀{u ∈ S} ⟦A ∨ B⟧(u)
+by monotonicity. Suppose the RHS is true, so that for each u ∈ S there is Sᵤ ∈ J(u) with
+: ∀ x ∈ Sᵤ. ⟦A⟧(x) ∨ ⟦B⟧(x).
+Then, by (L), ⋃{u ∈ S} Sᵤ ∈ J(w), so since
+: ∀ x ∈ ⋃{u ∈ S} Sᵤ. ⟦A⟧(x) ∨ ⟦B⟧(x),
+i.e. the LHS is true.
+∎
+
+* Soundness of IPL for cover models
+
+We'll use the following rules for IPL, taken indirectly from "Boxes and Diamonds", and which more or less match [Abel 2018].
+: --
+: Γ, A ⊢ A
+
+: --
+: Γ ⊢ ⊤
+
+: Γ ⊢ A ; Γ ⊢ B
+: ==
+: Γ ⊢ A ∧ B
+
+: Γ, A ⊢ B
+: --
+: Γ ⊢ A → B
+
+: Γ ⊢ A → B ; Γ ⊢ A
+: --
+: Γ ⊢ B
+
+: Γ ⊢ A
+: --
+: Γ ⊢ A ∨ B
+
+: Γ ⊢ B
+: --
+: Γ ⊢ A ∨ B
+
+: Γ ⊢ A ∨ B ; Γ, A ⊢ C ; Γ, B ⊢ C
+: --
+: Γ ⊢ C
+
+: Γ ⊢ ⊥
+: --
+: Γ ⊢ A
+
+*Theorem*: The above rules are sound for the interpretation in cover models.
+*Proof*: By induction on derivations. The 'var' rule and the product rules are trivial. Consider a proof of Γ ⊢ A → B. Given a cover model and world w ∈ W where
+: w ⊩ Γ
+we show that w ⊩ A → B. Let w ≤ w' and suppose w' ⊩ A. Then w' ⊩ Γ by monotonicity and so by induction hypothesis (Γ, A ⊨ B) we get w' ⊩ B. Since this holds for all w' ≥ w, we deduce w ⊩ A → B.
+
+Consider a proof of Γ ⊢ A ∨ B from Γ ⊢ A. Let w be a world where w ⊩ Γ. Then by hypothesis w ⊩ A, so by (M) obviously w ⊩ A ∨ B. But note that this case follows even without (M): if J(w) = ∅ then w ⊩ A ∨ B vacuously; and on the other hand if we find some S ∈ J(w) then by monotonicity
+: ∀ u ∈ S. u ⊩ A
+which implies
+: w ⊩ A ∨ B.
+The case of a proof of Γ ⊢ A ∨ B from Γ ⊢ B is similar.
+
+Consider a proof of Γ ⊢ C from Γ ⊢ A ∨ B; Γ,A ⊢ C; Γ,B ⊢ C. Let w be a world where w ⊩ Γ. By hypothesis, w ⊩ A ∨ B. This means there exists a cover S ∈ J(w) such that
+: ∀ u ∈ S. u ⊩ A or u ⊩ B.
+Suppose u ∈ S and u ⊩ A. Then by hypothesis, u ⊩ C. Similarly, if u ∈ S and u ⊩ B then u ⊩ C. Hence
+: ∀ u ∈ S. u ⊩ C.
+Since ⟦C⟧ is a sheaf, we have
+: w ⊩ C
+as required.
+
+Finally, consider a proof of Γ ⊢ A from Γ ⊢ ⊥. Let w be a world where w ⊩ Γ. Then, by hypothesis,
+: w ⊩ ⊥,
+which means that ∅ ∈ J(w). But ⟦A⟧ is a sheaf, so
+: ⟦A⟧(w) = ⋀{u ∈ ∅} ⟦A⟧(u) = 1
+as required.
+
+* Completeness of IPL for cover models
+
+*Theorem*: The above rules are complete for the interpretation in cover models.
+*Proof*: Consider the following cover model. Worlds are simply formulas. The accessibility relation
+: w ≤ w'
+means
+: w' ⊢ w.
+We'll say that a family w ≤ w₁,…,wₙ (i.e. wᵢ ⊢ w) is J-covering if
+: w ⊢ w₁ ∨ … ∨ wₙ.
+
+*Lemma*: This defines a coverage.
+*Proof*: Let S = {w₁,…,wₙ} ∈ J(w) and let w ≤ w'. I.e.,
+: wᵢ ⊢ w
+and
+: w ⊢ w₁ ∨ … ∨ wₙ
+and
+: w' ⊢ w.
+Then
+: wᵢ ∧ w' ⊢ w'
+and
+: w' ⊢ (w₁ ∧ w') ∨ … ∨ (wₙ ∧ w').
+Hence S' = {w₁ ∧ w', …, wₙ ∧ w'} ∈ J(w') and for each wᵢ ∧ w' ∈ S' we have
+: wᵢ ∧ w' ⊢ wᵢ,
+i.e. ∃ wᵢ ∈ S with
+: wᵢ ≤ wᵢ ∧ w'. This proves axiom (c).
+
+Axiom (M) is trivial. For (L), suppose S ∈ J(w) and for each u ∈ S, Sᵤ ∈ J(u). Then
+: ∀ u ∈ S. u ⊢ w,
+: w ⊢ ⋁S,
+: ∀ u ∈ S. ∀ v ∈ Sᵤ. v ⊢ u,
+: ∀ u ∈ S. u ⊢ ⋁Sᵤ.
+Thus,
+: ∀ v ∈ ⋃{u ∈ S} Sᵤ. v ⊢ w,
+and
+: w ⊢ ⋁(⋃{u ∈ S} Sᵤ).
+So ⋃{u ∈ S} Sᵤ ∈ J(w), as required. ∎Lemma
+
+The valuation is given by
+: V(p,w) = [ w ⊢ p ].
+
+*Lemma*: w ⊩ A ⇔ w ⊢ A.
+*Proof*: By induction on A. The variable case is trivial. The conjunction and implication cases are exactly as before. For ⊥, we have to show that w ⊢ ⊥ iff ∅ ∈ J(w), but this is immediate from the definition of the coverage. It remains to check the case A ∨ B. Suppose
+: w ⊢ A ∨ B.
+Then also
+: w ⊢ (A ∧ w) ∨ (B ∧ w)
+and hence {A ∧ w, B ∧ w} ∈ J(w). Since
+: A ∧ w ⊢ A
+and
+: B ∧ w ⊢ B,
+by induction we have
+: A ∧ w ⊩ A
+and
+: B ∧ w ⊩ B.
+Hence,
+: w ⊩ A ∨ B,
+by definition. Conversely, suppose
+: w ⊩ A ∨ B.
+Then there exists S ∈ J(w) with
+: ∀ u ∈ S. (u ⊩ A) ∨ (u ⊩ B).
+By induction,
+: ∀ u ∈ S. (u ⊢ A) ∨ (u ⊢ B),
+whence
+: ∀ u ∈ S. (u ⊢ A ∨ B).
+Since
+: w ⊢ ⋁S,
+it follows that
+: w ⊢ A ∨ B.
+∎Lemma
+
+Now, let A be a formula valid in all cover models. Then in the canonical model we have
+: ⊤ ⊩ A,
+so by the lemma we have
+: ⊤ ⊢ A.
 ∎Theorem
