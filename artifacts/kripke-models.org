@@ -83,7 +83,7 @@ satisfying the following conditions
 + (M) :: {w} ∈ J(w)
 + (L) :: if S ∈ J(w) and we have Sᵤ ∈ J(u) for each u ∈ S, then ⋃{u ∈ S} Sᵤ ∈ J(w).
 
-*Remark*: This formulation essentially comes from cite:johnstone-sketches-of-an-elephant-volume-1, except that Johnstone only requires (C) and treats other axioms as optional. This is because closing the coverage under conditions (M) and (L) does not change the notion of J-sheaf at all. We could omit (M) here without issues, but without (L) we would have a more complicated interpretation of disjunction and ⊥ below. To be more precise, if we only insisted on axiom (C), we would define the interpretations of the logical connectives in terms of the Heyting algebra of (subterminal) J-sheaves. In this Heyting algebra, ∧ and → still have the same formula as for Kripke models, but ⊥ and ∃ are defined only in terms of a universal property. Actually computing a formula for ∨ and ⊥ is difficult unless we have axiom (L).
+*Remark*: This formulation essentially comes from cite:johnstone-sketches-of-an-elephant-volume-1, except that Johnstone only requires (C) and treats other axioms as optional. This is because closing the coverage under conditions (M) and (L) does not change the notion of J-sheaf at all. We could omit (M) here without issues, but without (M) and (L) we would have a more complicated interpretation of disjunction and ⊥ below. To be more precise, if we only insisted on axiom (C), we would define the interpretations of the logical connectives in terms of the Heyting algebra of (subterminal) J-sheaves. In this Heyting algebra, ∧ and → still have the same formula as for Kripke models, but ⊥ and ∨ are defined only in terms of a universal property. Actually computing a formula for ∨ and ⊥ is difficult unless we have axiom (L). (M) makes relatively little difference, but does simplify the formula for ∨. It would be enough for our purposes just to weaken (M) to just ask for each J(w) to be non-empty.
 
 Let's say a *cover model* is a Kripke frame (W,≤) equipped with a coverage J and a valuation
 : V : 𝓥 × W → {0,1}
@@ -189,7 +189,7 @@ We'll use the following rules for IPL, taken indirectly from "Boxes and Diamonds
 : w ⊩ Γ
 we show that w ⊩ A → B. Let w ≤ w' and suppose w' ⊩ A. Then w' ⊩ Γ by monotonicity and so by induction hypothesis (Γ, A ⊨ B) we get w' ⊩ B. Since this holds for all w' ≥ w, we deduce w ⊩ A → B.
 
-Consider a proof of Γ ⊢ A ∨ B from Γ ⊢ A. Let w be a world where w ⊩ Γ. Then by hypothesis w ⊩ A, so by (M) obviously w ⊩ A ∨ B. But note that this case follows even without (M): if J(w) = ∅ then w ⊩ A ∨ B vacuously; and on the other hand if we find some S ∈ J(w) then by monotonicity
+Consider a proof of Γ ⊢ A ∨ B from Γ ⊢ A. Let w be a world where w ⊩ Γ. Then by hypothesis w ⊩ A, so by (M) obviously w ⊩ A ∨ B. As an aside, here is how we would use the weakened form of (M) mentioned earlier, that each J(w) ≠ ∅: assuming there is some S ∈ J(w) then by monotonicity
 : ∀ u ∈ S. u ⊩ A
 which implies
 : w ⊩ A ∨ B.
