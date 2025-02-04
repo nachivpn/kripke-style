@@ -31,4 +31,4 @@ Where: Room _IF 5.02_ (with the exception of 3 Dec, when it will be in _IF 3.07_
 
 | Date | Title | Speaker | Remark |
 |------|-------|---------|--------|
-| 11 Feb | TBD (On Two-dimensional Kripke Semantics) | [Alex Kavvos](https://seis.bristol.ac.uk/~tz20861/) |  |
+| 12 Feb | Two-dimensional Kripke Semantics | [Alex Kavvos](https://seis.bristol.ac.uk/~tz20861/) |  |
